@@ -1,71 +1,56 @@
-# docstring-generator README
+# docstring-generator
 
-This is the README for your extension "docstring-generator". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+#### A dart code generator for functions and classes. Generates a docstring composed of a String passed to the Docstring decorator and the code annotated on build, so if you want to add a Docstring so users or devs can view your implementation, you don't constantly have to manually update the docstring each time you make a change <br>
 
 ---
 
-## Following extension guidelines
+![](assets/DocstringGeneratorBefore.gif)
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Notice the apparent lack of docstrings... but just one **save** later... <br>
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+![](assets/DocstringGeneratorAfter.gif)
+![](assets/DocstringGeneratorPopup.gif)
 
-## Working with Markdown
+And voila!!! Docstrings galore <br>
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+Currently the following code segments are supported for annotation and generation (although they are largely untested): 
+- Classes
+- Functions/Methods
+- Variables
+- Enums
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+## Requirements
 
-## For more information
+- Dart VSCode extension 
+- Dart docstring_generator_annotator package: https://github.com/xanmankey/docstring_generator_annotator_dart.git (https://pub.dev/packages/docstring_generator_annotator)
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Usage
 
-**Enjoy!**
+Docstring_generator is pretty simple to use; all you have to do is: 
+- Install the dart vscode extension
+- Install the docstring_generator_annotator package via ```dart pub add docstring_generator_annotator```
+- Import the package via ```import 'package:docstring_generator_annotator/docstring_generator_annotator.dart'```
+- Add annotators above your code segments, e.g. ```@GenerateDocstring(description: "your description", codeExample: ["as", "many", "optional", "code", "examples", "as", "you", "want!"])``` 
+- Save your code and enjoy your docstrings!
+
+## Extension Settings
+
+Currently NA, however the extension does use the codemod (https://pub.dev/packages/codemod) dart package, so API could be potentially added for configuring codemod
+
+## Concerns
+
+- LACK of testing (I haven't written any tests for the extension yet); all a test would consist of though is taking an example file, one without generated docstrings and one with the ideal generated docstrings, running the generator, and then comparing the two
+- ⚠️ This is my first vscode extension :)
+
+## Future Plans
+
+- Fleshing out the current codebase; any ideas or contributions are welcome!
+- Potentially supporting other languages as well could be fun; I was thinking js, java, and python (although I haven't taken any action to support these languages as of yet)
+
+## Release Notes
+
+### 1.0.0
+
+Initial release of docstring_generator (yay!)
+
+---

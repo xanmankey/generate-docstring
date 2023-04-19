@@ -1,0 +1,2 @@
+# Docstring_Generator
+The dart AST parser and docstring generator used in the docstring_generator vscode extension. This code is included in the code repository, but only the compiled .exe file itself is included with the extension (to limit file size). 

@@ -5,6 +5,12 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+	// {
+	// 	"name": "Dart",
+	// 	"type": "dart",
+	// 	"request": "launch",
+	// 	"program": "src/parser/docstring_generator/lib/src/docstring_generator.dart"
+	// },
 		{
 			"name": "Run Extension",
 			"type": "extensionHost",

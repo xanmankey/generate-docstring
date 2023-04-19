@@ -1,11 +1,12 @@
 {
   "name": "docstring-generator",
   "displayName": "docstring_generator",
+  "repository": "https://github.com/xanmankey/docstring_generator.git",
   "description": "A simple code generator to generate docstrings comprised of annotated code on save or on build. See documentation for specific examples and usecases.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "files": [
     "extension.ts",
-    "GenerateDocstring/**/*"
+    "docstring_generator.js"
   ],
   "engines": {
     "vscode": "^1.76.0"
@@ -13,36 +14,12 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:dart"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "docstring-generator.helloWorld",
-        "title": "Hello World",
-        "category": "docstring_generator"
-      }, 
-      {
-        "command": "docstring-generator.testDart",
-        "title": "Test Dart",
-        "category": "docstring_generator"
-      },
-      {
-        "command": "docstring-generator.testPython",
-        "title": "Test Python",
-        "category": "docstring_generator"
-      },
-      {
-        "command": "docstring-generator.testJava",
-        "title": "Test Java",
-        "category": "docstring_generator"
-      },
-      {
-        "command": "docstring-generator.testJavascript",
-        "title": "Test Javascript",
-        "category": "docstring_generator"
-      }
-    ]
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -72,6 +49,7 @@
     "flutter-ast": "^0.0.4-4",
     "java-ast": "^0.3.0",
     "java-parser": "^2.0.4",
+    "nearley": "^2.20.1",
     "traverse": "^0.6.7"
   }
 }
