@@ -22,12 +22,16 @@
     "commands": []
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -38,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "@vscode/test-electron": "^2.2.3",
+    "esbuild": "^0.17.17",
     "eslint": "^8.34.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
@@ -46,10 +51,12 @@
   "dependencies": {
     "@babel/parser": "^7.21.3",
     "@qoretechnologies/python-parser": "^0.4.10",
+    "@vscode/vsce": "^2.19.0",
     "flutter-ast": "^0.0.4-4",
     "java-ast": "^0.3.0",
     "java-parser": "^2.0.4",
     "nearley": "^2.20.1",
+    "node-gyp": "^9.3.1",
     "traverse": "^0.6.7"
   }
 }
