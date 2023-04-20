@@ -4,12 +4,12 @@
 
 ---
 
-![](assets/DocstringGeneratorBefore.gif)
+![](https://github.com/xanmankey/docstring_generator/blob/main/assets/DocstringGeneratorBefore.gif)
 
 Notice the apparent lack of docstrings... but just one **save** later... <br>
 
-![](assets/DocstringGeneratorAfter.gif)
-![](assets/DocstringGeneratorPopup.gif)
+![](https://github.com/xanmankey/docstring_generator/blob/main/assets/DocstringGeneratorAfter.gif)
+![](https://github.com/xanmankey/docstring_generator/blob/main/assets/DocstringGeneratorPopup.gif)
 
 And voila!!! Docstrings galore <br>
 
