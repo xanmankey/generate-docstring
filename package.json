@@ -1,12 +1,13 @@
 {
-  "name": "docstring-generator",
-  "displayName": "docstring_generator",
-  "repository": "https://github.com/xanmankey/docstring_generator.git",
-  "description": "A simple code generator to generate docstrings comprised of annotated code on save or on build. See documentation for specific examples and usecases.",
+  "name": "generate-docstring",
+  "displayName": "generate-docstring",
+  "repository": "https://github.com/xanmankey/generate-docstring.git",
+  "publisher": "xanmankey",
+  "description": "A (dart) docstring code generator that uses ASTs and annotators to generate docstrings. See README.md for more information.",
   "version": "1.0.0",
   "files": [
-    "extension.ts",
-    "docstring_generator.js"
+    "src/extension.ts",
+    "src/parser/docstring_generator/lib/src/generate-docstring.dart"
   ],
   "engines": {
     "vscode": "^1.76.0"
@@ -17,7 +18,7 @@
   "activationEvents": [
     "onLanguage:dart"
   ],
-  "main": "./out/extension.js",
+  "main": "out/main.js",
   "contributes": {
     "commands": []
   },
