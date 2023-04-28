@@ -4,7 +4,7 @@
 
 ---
 
-![](https://github.com/xanmankey/docstring_generator/blob/main/assets/DocstringGeneratorBefore.gif?raw=true)
+![](https://github.com/xanmankey/generate-docstring/blob/main/assets/DocstringGeneratorBefore.gif?raw=true)
 
 Notice the apparent lack of docstrings... but just one **save** later... <br>
 
