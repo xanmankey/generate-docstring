@@ -4,7 +4,7 @@
   "repository": "https://github.com/xanmankey/generate-docstring.git",
   "publisher": "xanmankey",
   "description": "A (dart) docstring code generator that uses ASTs and annotators to generate docstrings. See README.md for more information.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": [
     "src/extension.ts",
     "src/parser/docstring_generator/lib/src/generate-docstring.dart"
